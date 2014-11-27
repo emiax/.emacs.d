@@ -36,6 +36,7 @@
     switch-window
     undo-tree
     monokai-theme
+    smooth-scrolling
 )
   "A list of packages to install at launch.")
 
