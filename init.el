@@ -11,7 +11,6 @@
 (defvar my-pkgs
   '(; Basic functionality
     ace-jump-mode
-    ack-and-a-half
     browse-kill-ring
     confluence
     dash
@@ -96,7 +95,7 @@
 (setq-default indent-tabs-mode nil)
 
 
-(color-theme-initialize)
+;;(color-theme-initialize)
 
 
 
