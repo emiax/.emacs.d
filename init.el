@@ -36,15 +36,24 @@
     undo-tree
     monokai-theme
     smooth-scrolling
+    fuzzy-format
+    cmake-mode
 )
   "A list of packages to install at launch.")
 
-(load-theme 'monokai t)
 
 (dolist (p my-pkgs)
   (when (not (package-installed-p p))
     (package-install p)))
 
+(require 'fuzzy-format)
+(setq fuzzy-format-default-indent-tabs-mode nil)
+(global-fuzzy-format-mode t)
+
+(load-theme 'monokai t)
+
+(setq load-path (cons (expand-file-name "/dir/with/cmake-mode") load-path))
+ (require 'cmake-mode)
 
 
 (setq ring-bell-function 'ignore)
@@ -82,6 +91,9 @@
  '(custom-safe-themes
    (quote
     ("64581032564feda2b5f2cf389018b4b9906d98293d84d84142d90d7986032d33" default)))
+ '(package-selected-packages
+   (quote
+    (fuzzy-format undo-tree switch-window smooth-scrolling smex smart-mode-line rainbow-mode rainbow-delimiters puppet-mode projectile password-store paredit nyan-mode mvn multiple-cursors monokai-theme magit iy-go-to-char ido-ubiquitous idle-highlight-mode flycheck flx-ido confluence browse-kill-ring ace-jump-mode)))
  '(standard-indent 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
